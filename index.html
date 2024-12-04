@@ -6,16 +6,16 @@
     <title>Lista de Tareas</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 500px;
+            font-family: Comic Sans MS, sans-serif;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0px;
         }
         .task {
             display: flex;
             justify-content: space-between;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 3px solid #4b38f2;
             margin-top: 10px;
         }
         .task input[type="text"] {
@@ -29,6 +29,12 @@
     <input type="text" id="newTask" placeholder="Nueva tarea">
     <button onclick="addTask()">Agregar</button>
     <button onclick="consTask()">Consultar tareas</button>
+    <p>Ingrese el índice de la tarea que desea actualizar:</p>
+    <input type="number" id="taskIndex" placeholder="Índice de la tarea">
+    <p>Ingrese la nueva tarea a actualizar:</p>
+    <input type="text" id="newTaskName" placeholder="Nueva tarea">
+    <button onclick="updTask()">Actualizar</button>
+    
     <div id="taskList"></div>
 
     <script>
@@ -57,6 +63,12 @@
             for (var i = 0; i < tasks.length; i++) {
                 var taskDiv = document.createElement('div');
                 taskDiv.className = 'task';
+
+                
+                var taskIndex = document.createElement('span');
+                taskIndex.className = 'task-index';
+                taskIndex.textContent = (i + 1) + '. '; // Mostrar índice comenzando desde 1
+                taskDiv.appendChild(taskIndex);
                 
                 var taskInput = document.createElement('input');
                 taskInput.type = 'text';
@@ -69,6 +81,17 @@
                 taskDiv.appendChild(taskInput);
                 taskList.appendChild(taskDiv);
             }
+        }
+        function updTask() {
+           
+            var tasks = JSON.parse(localStorage.getItem('tasks'));
+            var index_input = document.getElementById('taskIndex').value;
+            var newTaskName = document.getElementById('newTaskName').value;
+            if (!Array.isArray(tasks)) {
+                tasks = [];
+            }
+            tasks[index_input-1] = newTaskName;
+            localStorage.setItem('tasks', JSON.stringify(tasks));
         }
     </script>
 </body>
