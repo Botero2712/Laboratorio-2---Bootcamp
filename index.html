@@ -28,6 +28,7 @@
     <h1>Lista de Tareas</h1>
     <input type="text" id="newTask" placeholder="Nueva tarea">
     <button onclick="addTask()">Agregar</button>
+    <button onclick="consTask()">Consultar tareas</button>
     <div id="taskList"></div>
 
     <script>
@@ -41,11 +42,34 @@
                 tasks.push(newTask);
                 localStorage.setItem('tasks', JSON.stringify(tasks));
                 document.getElementById('newTask').value = '';
-                
+            }else{
+                alert("Ingrese una tarea");
             }
         }
+        function consTask()
+        {
+            var tasks = JSON.parse(localStorage.getItem('tasks'));
+            if (!Array.isArray(tasks)) {
+                tasks = [];
+            }
+            var taskList = document.getElementById('taskList');
+            taskList.innerHTML = '';
+            for (var i = 0; i < tasks.length; i++) {
+                var taskDiv = document.createElement('div');
+                taskDiv.className = 'task';
+                
+                var taskInput = document.createElement('input');
+                taskInput.type = 'text';
+                taskInput.value = tasks[i];
+                taskInput.setAttribute('data-index', i);
+                taskInput.onchange = function() {
+                    updateTask(this.dataset.index, this.value);
+                };
 
-
+                taskDiv.appendChild(taskInput);
+                taskList.appendChild(taskDiv);
+            }
+        }
     </script>
 </body>
 </html>
