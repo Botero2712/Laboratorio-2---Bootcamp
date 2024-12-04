@@ -34,6 +34,9 @@
     <p>Ingrese la nueva tarea a actualizar:</p>
     <input type="text" id="newTaskName" placeholder="Nueva tarea">
     <button onclick="updTask()">Actualizar</button>
+    <p>Ingrese el índice de la tarea que desea eliminar:</p>
+    <input type="number" id="taskIndexDel" placeholder="Índice de la tarea">
+    <button onclick="delTask()">Eliminar</button>
     
     <div id="taskList"></div>
 
@@ -91,6 +94,16 @@
                 tasks = [];
             }
             tasks[index_input-1] = newTaskName;
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function delTask() {
+            var tasks = JSON.parse(localStorage.getItem('tasks'));
+            var index_input = document.getElementById('taskIndexDel').value;
+            if (!Array.isArray(tasks)) {
+                tasks = [];
+            }
+            tasks.splice(index_input-1, 1);
             localStorage.setItem('tasks', JSON.stringify(tasks));
         }
     </script>
