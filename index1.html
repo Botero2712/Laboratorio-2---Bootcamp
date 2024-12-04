@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="RAGAR">
+    <meta name="keywords" content="li, td, ul, ol, img...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FullStack G-70</title>
+    <link rel="icon" href="img/favicon.ico">
+    
+    <link rel="stylesheet" href="misestilos.css">
+
+    <script>
+        function guardardatosLS() {
+            const user = document.getElementById("usuario").value ;
+            const pass = document.getElementById("passwd").value ;
+            const msg  = document.getElementById("msg").value ;
+            localStorage.setItem("usr",user) ;
+            localStorage.setItem("pas",pass) ;
+            localStorage.setItem("msg",msg) ;
+        }
+
+        function verdatosLS() {
+            const vu = localStorage.getItem("usr") ;
+            const vp = localStorage.getItem("pas") ;
+            const vm = localStorage.getItem("msg") ;
+            document.getElementById("usuario").value = vu ;
+            document.getElementById("passwd").value = vp ;
+            document.getElementById("msg").value = vm ;
+        }
+
+        function elidatosLS() {
+            localStorage.removeItem("usr") ;
+            localStorage.removeItem("pas") ;
+            localStorage.removeItem("msg") ;
+        }
+
+        function guardardatosSS() {
+            const vu = document.getElementById("usuario").value ;
+            const vp = document.getElementById("passwd").value ;
+            const vm = document.getElementById("msg").value ;
+            sessionStorage.setItem(vu,vu) ;
+            sessionStorage.setItem("vp",vp) ;
+            sessionStorage.setItem("vm",vm) ;
+        }
+
+        function verdatosSS() {
+            const vu = sessionStorage.getItem("vu") ;
+            const vp = sessionStorage.getItem("vp") ;
+            const vm = sessionStorage.getItem("vm") ;
+            document.getElementById("usuario").value = vu ;
+            document.getElementById("passwd").value = vp ;
+            document.getElementById("msg").value = vm ;
+        }
+        function elidatosSS() {
+            sessionStorage.removeItem("vu") ;
+            sessionStorage.removeItem("vp") ;
+            sessionStorage.removeItem("vm") ;
+        }
+
+        function copiarSSaLS() {
+            localStorage.setItem("vu",sessionStorage.getItem("vu")) ;
+            localStorage.setItem("vp",sessionStorage.getItem("vp")) ;
+            localStorage.setItem("vm",sessionStorage.getItem("vm")) ;
+        }
+    </script>
+</head>
+<body>
+    <hr>
+    <h1>LISTAS des-ORDENADAS</h1>
+    <hr>
+    <ul type="circle">
+        <font face="ink free" size="3" color="blue">
+            <li><a href="https://developer.mozilla.org/es/docs/Web/HTML">HTML</a></li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+        </font>
+    </ul>
+    <hr/>
+    <hr>
+    <h1>LISTAS ORDENADAS</h1>
+    <hr>
+    <nav>
+        <ol type="I" start="10" reversed>
+            <font face="ink free" size="3" color="blue">
+                <li><a href="https://developer.mozilla.org/es/docs/Web/HTML">HTML</a></li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li><a href="#imagenes">imágenes</a></li>
+                <li><a href="#enlaces">enlaces</a></li>
+                <li><a href="#tablas">tablas</a></li>
+                <li><a href="#contenedoras">contenedoras</a></li>
+                <li><a href="#javascript">JS</a></li>
+                <li><a href="#formularios">Formularios</a></li>
+                <li><a href="#audio">Audio</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#barpro">Barra de progreso</a></li>
+                <li><a href="#datlis">Lista de opciones</a></li>
+                <li><a href="#selid">Selector id</a></li>
+            </font>
+        </ol>
+    </nav>
+    <hr/>
+    <hr/>
+    <h1>FORMATEO DE ELEMENTOS</h1>
+    <hr/>
+    <p>Este es un parrafo normal</p>
+    <p>En <b>negrita</b> el parrafo</p>
+    <p>Texto <big>muy</big> grande</p>
+    <p>Texto <i>cursiva</i> en parrafo</p>
+    <p>Texto <small>pequeño</small> en parrafo</p>
+    <p>Texto <strong>fuerte</strong> en parrafo</p>
+    <p>Texto <sub>sub</sub> en parrafo</p>
+    <p>Texto <ins>ins</ins> en parrafo</p>
+    <p>Texto <del>eliminado</del> en parrafo</p>
+    <hr/>
+    <hr/>
+    <h1>ENCABEZADOS HTML</h1>
+    <hr/>
+    <h1>Encabezado h1</h1>
+    <h2>Encabezado h2</h2>
+    <h3>Encabezado h3</h3>
+    <h4>Encabezado h4</h4>
+    <h5>Encabezado h5</h5>
+    <h6>Encabezado h6</h6>
+    <hr/>
+    <h1>ATRIBUTOS</h1>
+    <hr/>
+    <p style="text-align: justify;"><font face="Narrow" size="5" color="red">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam quod porro obcaecati earum ipsa explicabo suscipit temporibus dignissimos, cumque, labore fugit veniam aliquam numquam quam repudiandae doloribus? Laudantium, assumenda earum.</font></p>
+    <hr/>
+    <section id="enlaces">
+        <hr>
+        <h1>ENLACES</h1>
+        <hr>
+        <a href="https://talentotech.gov.co/portal" 
+        target="_self">TalentoTech-self</a>
+        <br>
+        <a href="https://talentotech.gov.co/portal" target="_blank">TalentoTech-blank</a>
+        <br>
+        <a href="https://talentotech.gov.co/portal" target="mm">TalentoTech-iframe</a>
+
+        <br>
+        <iframe name="mm" src="mimarco.html" frameborder="1" width="70%" height="300"></iframe>
+        <br>
+
+        <a href="#">IR AL PPIO</a>
+    </section>
+    
+    <section id="imagenes">
+        <hr>
+        <h1>IMAGENES</h1>
+        <hr>
+        <img src="https://media.istockphoto.com/id/2101175462/es/foto/ruta-de-trekking-en-las-monta%C3%B1as-al-atardecer-de-verano.jpg?s=612x612&w=is&k=20&c=HIIz3eZElHOT-Rob73F9thZ4zioq0fO-YXAVo_WQ3BA=" alt="imagen no disponible" width="25%" height="25%">
+        <img src="img/imagen1.png" alt="cargando..." width="25%" height="25%">
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="tablas">
+        <hr>
+        <h1>TABLAS</h1>
+        <hr>
+
+        <table border="1" cellpadding="10" cellspacing="25">
+            <tr class="resaltar">
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+            </tr>
+            <tr>
+                <td colspan="2">Laura</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>Francisco</td>
+                <td>20</td>
+                <td>Cali</td>
+            </tr>
+            <tr>
+                <td>Luis</td>
+                <td rowspan="2">30</td>
+                <td>Cartagena</td>
+            </tr>
+            <tr>
+                <td>Andres</td>
+                <td>Cartagena</td>
+            </tr>
+        </table>
+
+        <table border="1">
+            <thead style="background-color: dodgerblue;">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Ciudad</th>
+                </tr>
+            </thead>
+            
+            <tbody style="background-color: gray;">
+                <tr>
+                    <td colspan="2">Laura</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Francisco</td>
+                    <td>20</td>
+                    <td>Cali</td>
+                </tr>
+                <tr>
+                    <td>Luis</td>
+                    <td rowspan="2">30</td>
+                    <td>Cartagena</td>
+                </tr>
+                <tr>
+                    <td>Andres</td>
+                    <td>Cartagena</td>
+                </tr>
+            </tbody>
+
+            <tfoot class="resaltar">
+                <tr>
+                    <td colspan="3">AQUI VAN LOS TOTALES</td>
+                </tr>
+            </tfoot>
+            
+        </table>
+
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="contenedoras">
+        <hr>
+        <h1>CONTENEDORAS</h1>
+        <hr>
+
+        <div id="tt" class="resaltar">Aquí tenemos el <strong>texto</strong> de una etiqueta div</div>
+
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="javascript">
+        <hr>
+        <h1>JAVASCRIPT</h1>
+        <hr>
+
+        <div id="cambiar" class="resaltar">Aquí tenemos la funcionalidad con <strong>javascript</strong> en html</div>
+
+        <script>
+            document.getElementById("cambiar").addEventListener('mouseover',function(){
+                this.style.color = "coral" ;
+            });
+        </script>
+
+        <script>
+            document.getElementById("cambiar").addEventListener('click',function(){
+                this.style.color = "blue" ;
+            });
+        </script>
+
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="formularios">
+        <hr>
+        <h1>FORMULARIOS</h1>
+        <hr>
+
+        <form onsubmit="guardardatosLS(); return false ;" method="post">
+            <label for="usuario">Usuario</label>
+            <input type="email" id="usuario" name="usuario" placeholder="ingrese email" required/>
+            <br>
+            <label for="passwd">Contraseña</label>
+            <input type="text" id="passwd" name="passwd" placeholder="contraseña" required/>
+            <br>
+            <label for="msg">Mensaje</label>
+            <textarea name="msg" id="msg" rows="5" cols="50" placeholder="que quieres decir hoy"></textarea>
+            <br>
+            <label class="resaltar"  for="genero">Genero</label>
+            <input type="radio" name="genero" value="M">Masculino
+            <input type="radio" name="genero" value="F">Femenino
+            <br>
+            <label class="resaltar" for="pastie">Pasatiempos</label>
+            <input type="checkbox" name="pastie" value="L">Lectura
+            <input type="checkbox" name="pastie" value="T">Trotar
+            <input type="checkbox" name="pastie" value="D">Dormir
+            <input type="checkbox" name="pastie" value="Tv">Televisión
+            <br>
+            <input type="submit" value="Enviar"/>
+            <br>
+            <input type="button" onclick="verdatosLS()" value="Ver LS"/>
+            <input type="button" onclick="elidatosLS()" value="Eli LS"/>
+            <br>
+            <input type="button" onclick="guardardatosSS()" value="Guardar SSS">
+            <input type="button" onclick="verdatosSS()" value="Ver SS"/>
+            <input type="button" onclick="elidatosSS()" value="Eli SS"/>
+            <br>
+            <input type="button" onclick="copiarSSaLS()" value="Copiar SSaLS"/>
+        </form>
+
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="audio">
+        <hr>
+        <h1>AUDIO</h1>
+        <hr>
+
+        <audio src="audio/ejemplo.mp3" controls>
+            Navegador no soporta etiqueta <code>audio</code>
+        </audio>
+        <br>
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="video">
+        <hr>
+        <h1>VIDEO</h1>
+        <hr>
+
+        <video controls width="640" height="360">
+            <source src="videos/ejvideo.mp4" type="video/mp4">
+            Navegador no soporta etiqueta <code>video</code>
+        </video>
+        
+        <br>
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="barpro">
+        <hr>
+        <h1>Barra de Progreso</h1>
+        <hr>
+
+        Status: <progress min="0" max="100" value="95"></progress>
+
+        <br>
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="datlis">
+        <hr>
+        <h1>Lista de opciones</h1>
+        <hr>
+
+        <input type="search" id="ms" list="colores">
+        <datalist id="colores">
+            <option value="amarillo">
+            <option value="azul">
+            <option value="rojo">
+        </datalist>
+
+        <br>
+        <a href="#">ir al ppio</a>
+    </section>
+
+    <section id="selid">
+        <hr>
+        <h1>Selector id</h1>
+        <hr>
+
+        <div id="miid">
+            <strong>Hola este es un div con mucho estilo</strong>
+        </div>
+        <div>
+            <strong>Hola este <em>es un div sin</em> estilo</strong>
+        </div>
+        <div id="estilo">
+            <p class="primer">
+                este es un parrafo <em>mas</em>
+            </p>
+        </div>
+
+        <br>
+        <a href="#">ir al ppio</a>
+    </section>
+
+</body>
+</html>

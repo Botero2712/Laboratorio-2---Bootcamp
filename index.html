@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .task {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        .task input[type="text"] {
+            border: none;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="newTask" placeholder="Nueva tarea">
+    <button onclick="addTask()">Agregar</button>
+    <div id="taskList"></div>
+
+    <script>
+        function addTask() {
+            var newTask = document.getElementById('newTask').value;
+            if (newTask) {
+                var tasks = JSON.parse(localStorage.getItem('tasks'));
+                if (!Array.isArray(tasks)) {
+                    tasks = [];
+                }
+                tasks.push(newTask);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+                document.getElementById('newTask').value = '';
+                
+            }
+        }
+
+
+    </script>
+</body>
+</html>

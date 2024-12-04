@@ -1,0 +1,25 @@
+
+
+.resaltar {
+    color: #aed9e0;
+    font-weight: bold;
+    background-color: chartreuse;
+}
+
+h1 {
+    color: orange;
+}
+
+p {
+    background-color: deeppink;
+}
+
+#miid {
+    color: red;
+    background-color: yellow;
+}
+
+#estilo .primer em {
+    color: black;
+    background-color: chartreuse;
+}
